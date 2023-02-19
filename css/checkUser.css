@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height:100%;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    background-color: #dbd5d5;
+}
+
+.ationtext {
+    height: 300px;
+    margin-left: 100px;
+    line-height: 50px;
+}
+
+.usertable {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 750px;
+    height: 405px;
+    border-radius: 16px;
+    box-shadow: 10px 10px 30px 1px #8f3b3b;
+    background-color: #dbd5d5;
+}
+
+
+.checkblock {
+    position: relative;
+    width: 700px;
+    height: 100px;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    color:#7c2828ec;
+}
+
+.checkblock:first-child {
+    width: 100%;
+    margin-left: 0;
+}
+
+.checkblock input {
+    position: absolute;
+    border: none;
+    height: 100%;
+    width: 70%;
+    border-radius: 10px;
+    font-size: 28px;
+    padding: 0px 16px;
+    background-color: #dbd5d5 ;
+    outline: none;
+}
+
+.checkblock span {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.checkblock .btn{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    color: #313131;
+    background-color: #939c9c;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.checkblock .nsp {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    letter-spacing: 10px;
+}
+
+.checkblock .psp {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    letter-spacing: 10px;
+}
+

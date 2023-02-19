@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script>
+        //Date 物件
+        // let d = new Date();
+        // console.log(d);
+
+        // let theYear = d.getFullYear();
+        // console.log(theYear);
+
+
+        //object物件//this指的是cars物件
+        // function f(){
+        //     return `${this.brand}-${this["max speed"]}`;
+            
+        // }
+
+        // let cars={
+        //     brand:"tesla",
+        //     "max speed":250,
+        //     color:"white",
+        //     dispf:f
+        // }
+        // console.log(cars);
+        // console.log(`${cars.color}, ${cars["max speed"]}`); //ES6
+        // console.log(cars.dispf());
+
+
+        // //for...in(利用索引取得元素)
+        // let div1 = document.getElementById("myDiv");
+        // for(let prop in cars){
+        //     console.log(prop);//屬性名稱
+        //     console.log(cars[prop]);//屬性值
+        //     div1.innerHTML +=`<li>cars[${prop}]=${cars[prop]}</li>`;
+        // }
+
+        // //for...in(陣列)
+        // let myfoods = [["apple,orange,banana"],["pork, beef,soup"]];
+        // for(let i = 0; i<myfoods.length;i++) {
+        //     alert(myfoods[i]);
+        // }
+        // for(let foods of myfoods) {
+        //     alert(foods);
+        // }
+
+        let balls=["baseball","basketball","tennis"]; 
+        let ary=[5,6,7];
+
+        // console.log(balls.concat(ary));//和某陣列串接建立新的陣列
+        
+        // console.log(balls.join("-"));//所有元素以分隔符號串連
+        
+        // console.log(balls.reverse());//順序反轉
+        
+        // console.log(balls.pop());//陣列尾端取出一個元素值
+        // console.log(balls.shift());//從陣列前端取出一個元素值
+        
+        // console.log(balls.push("itemA", "itemB"));//陣列尾端加入多個元素值
+        // console.log(balls);
+
+        // console.log(balls.slice(1,2));//索引start到索引end複製部份陣列(不包含索引end)
+        // console.log(balls);
+
+        // console.log(balls.splice(1,2,"itemv", "items"));//插入、刪除、替換元素
+        // console.log(balls);
+
+        // console.log(balls.sort());//陣列元素排序
+
+        //陣列排序sort
+        // let br = [35,6,78,12,54,9];//sort預設以unicode編碼去做排序
+        // br.sort();
+        // console.log(br);
+
+        // let hr = [35,6,78,12,54,9];
+        // br.sort(function(a,b) {
+        //     return a - b;//升序，如果是b-a則降序
+        // })
+        // console.log(br);
+
+
+        var emps = [{"name":"Tom","workYears":3,"salary":45000},
+                    {"name":"Jack","workYears":5,"salary":55000},
+                    {"name":"Mary","workYears":7,"salary":65000}];
+
+        console.log(emps);
+        console.log(emps[1]);
+        console.log(emps[1].salary);
+        
+        let name, wy,s;
+        let str=`<ul>`;
+        for(let value of emps) {
+            console.log(value);
+            name=value.name;
+            wy=value.workYears;
+            s=value.salary;
+            str +=`<li>${name},${wy},${s}</li>`;
+        }
+        str +=`</ul>`;
+        document.getElementById("myDiv").innerHTML=str;
+    </script>
+</body>
+</html>

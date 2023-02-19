@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color : #314081;
+    font-size: 25px;
+}
+
+h1 {
+    color : #000;
+}
+
+table {
+    background-color: #ddd4d4;
+}
+
+td {
+    border: 1px solid #000;
+    padding: 10px;
+}

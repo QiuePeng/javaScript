@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--HTML屬性事件處理程序-->
+   <h1 onclick="f1()">method1</h1>
+
+    <!-- JavaScript屬性事件處理程序 -->
+    <h1 id="m2">method2</h1>
+
+    <!-- W3C DOM 事件處理程序 -->
+    <h1 id="m3">method3</h1>
+
+    <script>
+        function f1(){
+            alert("method1");
+        }
+        function f2(){
+            alert("method2");
+        }
+        function f3(){
+            alert("method3");
+        }
+
+        document.getElementById("m2").onclick=f2;
+        document.getElementById("m2").onclick=function(){//匿名函數(33行會被覆蓋掉)
+            alert("method2x");
+        };
+
+        document.getElementById("m3").addEventListener("click",f3);//最應該用的
+        document.getElementById("m3").addEventListener("click", function(){// 匿名函數(不會覆蓋)
+            alert("method3x");
+        })
+        
+
+    </script>
+</body>
+</html>

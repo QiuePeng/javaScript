@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework3</title>
+</head>
+<body>
+    <div id="images" >
+        <img id="star1" src="/images/star.gif" alt="">
+        <img id="star2" src="/images/star.gif" alt="">
+        <img id="star3" src="/images/star.gif" alt="">
+        <img id="star4" src="/images/star.gif" alt="">
+        <img id="star5" src="/images/star.gif" alt="">
+    </div>
+    <p id="cost"></p>
+
+    <script>
+
+        document.getElementById("star1").addEventListener("mouseout", mouseout1);
+        document.getElementById("star2").addEventListener("mouseout", mouseout2);
+        document.getElementById("star3").addEventListener("mouseout", mouseout3);
+        document.getElementById("star4").addEventListener("mouseout", mouseout4);
+        document.getElementById("star5").addEventListener("mouseout", mouseout5);
+
+        document.getElementById("star1").addEventListener("click", click1);
+        document.getElementById("star2").addEventListener("click", click2);
+        document.getElementById("star3").addEventListener("click", click3);
+        document.getElementById("star4").addEventListener("click", click4);
+        document.getElementById("star5").addEventListener("click", click5);
+
+        document.getElementById("star1").addEventListener("mouseover", mouseover1);
+        document.getElementById("star2").addEventListener("mouseover", mouseover2);
+        document.getElementById("star3").addEventListener("mouseover", mouseover3);
+        document.getElementById("star4").addEventListener("mouseover", mouseover4);
+        document.getElementById("star5").addEventListener("mouseover", mouseover5);
+
+
+
+        function click1() {
+            document.getElementById("cost").innerHTML="評分為...1";
+            document.getElementById("star1").removeEventListener("mouseout", mouseout1);
+        }
+        function click2() {
+            document.getElementById("cost").innerHTML="評分為...2";
+            document.getElementById("star1").removeEventListener("mouseout", mouseout1);
+            document.getElementById("star2").removeEventListener("mouseout", mouseout2);
+        }
+        function click3() {
+            document.getElementById("cost").innerHTML="評分為...3";
+            document.getElementById("star1").removeEventListener("mouseout", mouseout1);
+            document.getElementById("star2").removeEventListener("mouseout", mouseout2);
+            document.getElementById("star3").removeEventListener("mouseout", mouseout3);
+        }
+        function click4() {
+            document.getElementById("cost").innerHTML="評分為...4";
+            document.getElementById("star1").removeEventListener("mouseout", mouseout1);
+            document.getElementById("star2").removeEventListener("mouseout", mouseout2);
+            document.getElementById("star3").removeEventListener("mouseout", mouseout3);
+            document.getElementById("star4").removeEventListener("mouseout", mouseout4);
+        }
+        function click5() {
+            document.getElementById("cost").innerHTML="評分為...5";
+            document.getElementById("star1").removeEventListener("mouseout", mouseout1);
+            document.getElementById("star2").removeEventListener("mouseout", mouseout2);
+            document.getElementById("star3").removeEventListener("mouseout", mouseout3);
+            document.getElementById("star4").removeEventListener("mouseout", mouseout4);
+            document.getElementById("star5").removeEventListener("mouseout", mouseout5);
+
+        }
+
+
+        function mouseover1() {
+            document.getElementById("star1").src="/images/chngstar.gif";
+            
+        }
+        function mouseover2() {
+            document.getElementById("star1").src="/images/chngstar.gif";
+            document.getElementById("star2").src="/images/chngstar.gif";
+        }
+        function mouseover3() {
+            document.getElementById("star1").src="/images/chngstar.gif";
+            document.getElementById("star2").src="/images/chngstar.gif";
+            document.getElementById("star3").src="/images/chngstar.gif";
+        }
+        function mouseover4() {
+            document.getElementById("star1").src="/images/chngstar.gif";
+            document.getElementById("star2").src="/images/chngstar.gif";
+            document.getElementById("star3").src="/images/chngstar.gif";
+            document.getElementById("star4").src="/images/chngstar.gif";
+        }
+        function mouseover5() {
+            document.getElementById("star1").src="/images/chngstar.gif";
+            document.getElementById("star2").src="/images/chngstar.gif";
+            document.getElementById("star3").src="/images/chngstar.gif";
+            document.getElementById("star4").src="/images/chngstar.gif";
+            document.getElementById("star5").src="/images/chngstar.gif";
+        }
+
+
+
+        function mouseout1() {
+            document.getElementById("star1").src="/images/star.gif";
+        }
+        function mouseout2() {
+            document.getElementById("star1").src="/images/star.gif";
+            document.getElementById("star2").src="/images/star.gif";
+        }
+        function mouseout3() {
+            document.getElementById("star1").src="/images/star.gif";
+            document.getElementById("star2").src="/images/star.gif";
+            document.getElementById("star3").src="/images/star.gif";
+        }
+        function mouseout4() {
+            document.getElementById("star1").src="/images/star.gif";
+            document.getElementById("star2").src="/images/star.gif";
+            document.getElementById("star3").src="/images/star.gif";
+            document.getElementById("star4").src="/images/star.gif";
+        }
+        function mouseout5() {
+            document.getElementById("star1").src="/images/star.gif";
+            document.getElementById("star2").src="/images/star.gif";
+            document.getElementById("star3").src="/images/star.gif";
+            document.getElementById("star4").src="/images/star.gif";
+            document.getElementById("star5").src="/images/star.gif";
+        }
+
+
+
+    </script>
+
+</body>
+</html>
