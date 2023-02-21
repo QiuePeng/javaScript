@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carousel.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="carouserl">
+        <div class="leftbox">
+            <img id="left" src="/images/leftarrow.png" alt="">
+        </div>
+        <div class="imgbox">
+            <img class="img" id="img1" src="/images/img1.jpg" alt="">
+            <img class="img" id="img2" src="/images/img2.jpg" alt="">
+            <img class="img" id="img3" src="/images/img3.jpg" alt="">
+            <img class="img" id="img4" src="/images/img4.jpg" alt="">
+            <img class="img" id="img5" src="/images/img5.jpg" alt="">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="rightbox">
+            <img id="right" src="/images/rightarrow.png" alt="">
+        </div>
+    </div>
+
+    
+    <script>
+        let p = document.querySelectorAll(".img").addEventListener("setInterval", auto);
+        let pl = p.length;
+        console.log(p);
+        
+        function click() {
+            let f = document.getElementById("left").addEventListener("click", clickl);
+            let r = document.getElementById("right").addEventListener("click", clickr);
+        }
+        function auto() {
+            for(let i = 1; i< pl ; i ++ ) {
+                p[i].src = "/images"+img[i]+".jpg";
+            }
+        }
+
+            
+
+
+
+    </script>
+</body>
+</html>

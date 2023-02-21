@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height:100%;
+    background-color: #4b503f;
+}
+
+#left {
+    cursor: pointer;
+}
+
+#right {
+    cursor: pointer;
+}
+
+.carouserl {
+    /* background-color: #fff; */
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgbox {
+    background-color: #a06f6f;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin: 100px;
+}
+
+.img {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+
+}

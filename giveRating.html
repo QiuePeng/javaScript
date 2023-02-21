@@ -16,72 +16,7 @@
     </div>
     <p id="cost"></p>
 
-    <script>
-
-        let d = "fkorkr"
-        let f = d.substr(2)
-        console.log(f);
-
-        let a = document.querySelectorAll("img.a");
-        console.log(a);
-
-        document.getElementById("star1").addEventListener("mouseout", mouseout);
-        document.getElementById("star2").addEventListener("mouseout", mouseout);
-        document.getElementById("star3").addEventListener("mouseout", mouseout);
-        document.getElementById("star4").addEventListener("mouseout", mouseout);
-        document.getElementById("star5").addEventListener("mouseout", mouseout);
-
-
-        document.getElementById("star1").addEventListener("click", click);
-        document.getElementById("star2").addEventListener("click", click);
-        document.getElementById("star3").addEventListener("click", click);
-        document.getElementById("star4").addEventListener("click", click);
-        document.getElementById("star5").addEventListener("click", click);
-
-        document.getElementById("star1").addEventListener("mouseover", mouseover);
-        document.getElementById("star2").addEventListener("mouseover", mouseover);
-        document.getElementById("star3").addEventListener("mouseover", mouseover);
-        document.getElementById("star4").addEventListener("mouseover", mouseover);
-        document.getElementById("star5").addEventListener("mouseover", mouseover);
-
-        function mouseover() {
-            let p = document.images;
-            for(let i = 0 ; i < this.id.substr(4) ; i++) {
-                p[i].src = "/images/changstar.gif";
-                document.getElementById("cost").innerHTML=`評分為...${i+1}`;
-            }
-        }
-
-        function mouseout() {
-            let p = document.images;
-            for(let i = 0 ; i < this.id.substr(4) ; i++) {
-                p[i].src = "/images/star.gif";
-                document.getElementById("cost").innerHTML="";
-            }
-        }
-
-        function click() {
-            let p = document.images;
-            for(let i = 0 ; i < this.id.substr(4) ; i++) {
-                console.log(this.id);
-                p[i].src = "/images/changstar.gif";
-                p[i].removeEventListener("mouseout", mouseout);
-                p[i].removeEventListener("mouseover", mouseover);
-                p[i].removeEventListener("click", click);
-            }
-        }
-
-        function dbclick() {
-            let p = document.images;
-            for(let i = 0 ; i < this.id.substr(4) ; i++) {
-                p[i].src = "/images/star.gif";
-                // document.getElementById(this.id).addEventListener("mouseout", mouseout);
-                // document.getElementById(this.id).addEventListener("mouseover", mouseover);
-                // document.getElementById(this.id).addEventListener("click", click);
-            }
-        }
-        setTimeout(dbclick, 300);
-    </script>
+    <script src="/js/giveRating.js"></script>
 
 </body>
 </html>
