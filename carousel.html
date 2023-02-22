@@ -8,49 +8,85 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Homework4</h1>
     <div class="carouserl">
         <div class="leftbox">
             <img id="left" src="/images/leftarrow.png" alt="">
         </div>
-        <div class="imgbox">
-            <img class="img" id="img1" src="" alt="">
-            <img class="img" id="img2" src="" alt="">
-            <img class="img" id="img3" src="" alt="">
-            <img class="img" id="img4" src="" alt="">
-            <img class="img" id="img5" src="" alt="">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="contentbox">
+            <div class="content">
+                <div class="imgbox">
+                    <img class="img" id="img1" src="/images/img1.jpg" alt="">
+                </div>
+                <div class="imgbox">
+                    <img class="img" id="img2" src="/images/img2.jpg" alt="">
+                </div>
+                <div class="imgbox">
+                    <img class="img" id="img3" src="/images/img3.jpg" alt="">
+                </div>
+                <div class="imgbox">
+                    <img class="img" id="img4" src="/images/img4.jpg" alt="">
+                </div>
+                <div class="imgbox">
+                    <img class="img" id="img5" src="/images/img5.jpg" alt="">
+                </div>
+            </div>
+            <div class="dotsbox">
+                <div class="dots" id="dots" ></div>
+                <div class="dots" id="dots" ></div>
+                <div class="dots" id="dots" ></div>
+                <div class="dots" id="dots" ></div>
+                <div class="dots" id="dots" ></div>
+            </div>
         </div>
         <div class="rightbox">
             <img id="right" src="/images/rightarrow.png" alt="">
         </div>
     </div>
 
-    
     <script>
-        var p = document.querySelectorAll(".img");
-        let pl = p.length;
-        console.log(p);
+        let b = document.getElementsByClassName("imgbox");
+        console.log(b);
+        let bl = b.length;
+        let slideIndex = 1;
         
-        function click() {
-            let f = document.getElementById("left").addEventListener("click", clickl);
-            let r = document.getElementById("right").addEventListener("click", clickr);
-        }
-        function auto() {
-            for(let i = 0; i < pl ; i++ ) {
-                setTimeout(function() {
-                    p[0].src = `/images/img${i+1}.jpg`;
-                    console.log(p[0].src);
-                },2000);
+        document.getElementById("left").addEventListener("click", reduceClick);
+        document.getElementById("right").addEventListener("click", pulsClick);
 
-                
+        function pulsClick(n) {
+            moveSlide(slideIndex +1);
+        }
+
+        function reduceClick(n) {
+            moveSlide(slideIndex -1);
+        }
+
+        function moveSlide(n) {
+            console.log(n);
+            for(let i = 0 ; i < bl ; i++ ) {
+                b[i].style.display="none";
             }
-        }setInterval(auto, 1000);
+            if(n > bl) {
+                n = 1;
+            }
+            if(n < 1) {
+                n = bl-1;
+            }
+            b[n-1].style.display="block";
+            slideIndex = n;
+            console.log(n);
+        }
+
+        function auto() {
+                timers = setInterval(function() {
+                    
+                    function pulsClick(n) {
+                        
+                        moveSlide(slideIndex +1);
+                    }
+                    pulsClick();
+                },100)
+            }auto();
 
             
 
