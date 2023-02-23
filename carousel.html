@@ -38,6 +38,9 @@
                 <div class="dots" id="dots" ></div>
                 <div class="dots" id="dots" ></div>
             </div>
+            <div class="stopbox">
+                <img class="stop" id="stopbtn" src="/images/meteorite.png" alt="">
+            </div>
         </div>
         <div class="rightbox">
             <img id="right" src="/images/rightarrow.png" alt="">
@@ -46,12 +49,13 @@
 
     <script>
         let b = document.getElementsByClassName("imgbox");
-        console.log(b);
         let bl = b.length;
         let slideIndex = 1;
+        let bool = 1;
         
         document.getElementById("left").addEventListener("click", reduceClick);
         document.getElementById("right").addEventListener("click", pulsClick);
+        document.getElementById("stopbtn").addEventListener("click", srbtn);
 
         function pulsClick(n) {
             moveSlide(slideIndex +1);
@@ -79,19 +83,34 @@
 
         function auto() {
                 timers = setInterval(function() {
-                    
                     function pulsClick(n) {
-                        
                         moveSlide(slideIndex +1);
-                    }
-                    pulsClick();
-                },100)
+                    }pulsClick();
+                },500)
             }auto();
 
-            
 
+        function stop() {
+        clearInterval(timers);
+        document.getElementById("stopbtn").src = "/images/meteoriterun.png";
+        }
 
+        function run() {
+            document.getElementById("stopbtn").src = "/images/meteorite.png"
+            auto();    
+        }
 
+        function srbtn() {
+          
+            if (bool == 1) {
+                stop();
+                bool=0;
+            }
+            else{
+                run();
+                bool=1;
+            }
+        }
     </script>
 </body>
 </html>

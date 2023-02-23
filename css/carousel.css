@@ -87,7 +87,7 @@ h1 {
     width: 18px;
     height: 18px;
     border-radius: 50px;
-    margin-left: 18px;
+    margin-left: 20px;
     cursor: pointer;
     background-color: #c0c4b2;
     transition: 0.3s;
@@ -97,4 +97,23 @@ h1 {
 .dots:hover {
     background-color: #e7c321;
     border-radius: 0px;
+}
+
+.stopbox {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.stop {
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+    border-radius: 10px;
+    letter-spacing: 10px;
+    margin-left: 30px;
+    text-align: center;
+    cursor: pointer;
 }
