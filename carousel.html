@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/carousel.css">
-    <title>Document</title>
+    <title>Homework4</title>
 </head>
 <body>
-    <h1>Homework4</h1>
+    
     <div class="carouserl">
         <div class="leftbox">
             <img id="left" src="/images/leftarrow.png" alt="">
@@ -16,27 +16,27 @@
         <div class="contentbox">
             <div class="content">
                 <div class="imgbox">
-                    <img class="img" id="img1" src="/images/img1.jpg" alt="">
+                    <img class="img" id="img1" src="/images/img1.png" alt="">
                 </div>
                 <div class="imgbox">
-                    <img class="img" id="img2" src="/images/img2.jpg" alt="">
+                    <img class="img" id="img2" src="/images/img2.png" alt="">
                 </div>
                 <div class="imgbox">
-                    <img class="img" id="img3" src="/images/img3.jpg" alt="">
+                    <img class="img" id="img3" src="/images/img3.png" alt="">
                 </div>
                 <div class="imgbox">
-                    <img class="img" id="img4" src="/images/img4.jpg" alt="">
+                    <img class="img" id="img4" src="/images/img4.png" alt="">
                 </div>
                 <div class="imgbox">
-                    <img class="img" id="img5" src="/images/img5.jpg" alt="">
+                    <img class="img" id="img5" src="/images/img5.png" alt="">
                 </div>
             </div>
             <div class="dotsbox">
-                <div class="dots" id="dots" ></div>
-                <div class="dots" id="dots" ></div>
-                <div class="dots" id="dots" ></div>
-                <div class="dots" id="dots" ></div>
-                <div class="dots" id="dots" ></div>
+                <div class="dots" onclick="currentSlide(1)"></div>
+                <div class="dots" onclick="currentSlide(2)"></div>
+                <div class="dots" onclick="currentSlide(3)"></div>
+                <div class="dots" onclick="currentSlide(4)"></div>
+                <div class="dots" onclick="currentSlide(5)"></div>
             </div>
             <div class="stopbox">
                 <img class="stop" id="stopbtn" src="/images/meteorite.png" alt="">
@@ -45,72 +45,8 @@
         <div class="rightbox">
             <img id="right" src="/images/rightarrow.png" alt="">
         </div>
+        <h1>Homework4</h1>
     </div>
-
-    <script>
-        let b = document.getElementsByClassName("imgbox");
-        let bl = b.length;
-        let slideIndex = 1;
-        let bool = 1;
-        
-        document.getElementById("left").addEventListener("click", reduceClick);
-        document.getElementById("right").addEventListener("click", pulsClick);
-        document.getElementById("stopbtn").addEventListener("click", srbtn);
-
-        function pulsClick(n) {
-            moveSlide(slideIndex +1);
-        }
-
-        function reduceClick(n) {
-            moveSlide(slideIndex -1);
-        }
-
-        function moveSlide(n) {
-            console.log(n);
-            for(let i = 0 ; i < bl ; i++ ) {
-                b[i].style.display="none";
-            }
-            if(n > bl) {
-                n = 1;
-            }
-            if(n < 1) {
-                n = bl-1;
-            }
-            b[n-1].style.display="block";
-            slideIndex = n;
-            console.log(n);
-        }
-
-        function auto() {
-                timers = setInterval(function() {
-                    function pulsClick(n) {
-                        moveSlide(slideIndex +1);
-                    }pulsClick();
-                },500)
-            }auto();
-
-
-        function stop() {
-        clearInterval(timers);
-        document.getElementById("stopbtn").src = "/images/meteoriterun.png";
-        }
-
-        function run() {
-            document.getElementById("stopbtn").src = "/images/meteorite.png"
-            auto();    
-        }
-
-        function srbtn() {
-          
-            if (bool == 1) {
-                stop();
-                bool=0;
-            }
-            else{
-                run();
-                bool=1;
-            }
-        }
-    </script>
+    <script src="/js/carousel.js"></script>
 </body>
 </html>
