@@ -9,6 +9,8 @@ document.getElementById("left").addEventListener("click", reduceClick);
 document.getElementById("right").addEventListener("click", pulsClick);
 document.getElementById("stopbtn").addEventListener("click", srbtn);
 
+moveSlide(slideIndex);
+
 function pulsClick(n) {
     moveSlide(slideIndex +1);
 }
