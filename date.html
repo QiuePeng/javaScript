@@ -12,41 +12,28 @@
         <div class="listbox">
             <h2>Calendar</h2>
             <div class="selectbox">
-                <select name="" id="">
-                    <option value="">2010</option>
-                    <option value="">2011</option>
-                    <option value="">2012</option>
-                    <option value="">2013</option>
-                    <option value="">2014</option>
-                    <option value="">2015</option>
-                    <option value="">2016</option>
-                    <option value="">2017</option>
-                    <option value="">2018</option>
-                    <option value="">2019</option>
-                    <option value="">2020</option>
-                    <option value="">2021</option>
-                    <option value="">2022</option>
-                    <option value="">2023</option>
-                    <option value="">2024</option>
-                    <option value="">2025</option>
+                <select name="" id="year" onchange="leapYear()">
+                    <option value="2110">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
                 </select>
-                <select name="" id="">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
-                    <option value="">6</option>
-                    <option value="">7</option>
-                    <option value="">8</option>
-                    <option value="">9</option>
-                    <option value="">10</option>
-                    <option value="">11</option>
-                    <option value="">12</option>
-                </select>
-                <select name="" id=""></select>
+                <select name="" id="month" onchange="getMonth()"></select>
+                <select name="" id="date"></select>
             </div>
-            <div class="datelist">
+            <div class="datelist" >
                 <ul>
                     <li>MON</li>
                     <li>TUE</li>
@@ -63,5 +50,63 @@
             <p>sdsdsd</p>
         </div>
     </div>
+    <script>
+
+        let monthName = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        
+        let day_month = [31,28,31,30,31,30,31,31,30,31,30,31];
+        let day_momth_len = day_month.length;
+        let s = document.querySelectorAll("select")[1];
+        
+        
+        //Month選單
+        for(let i = 1 ; i <= day_momth_len ; i++) {
+            s.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+        console.log(s);
+
+        function getMonth() {
+            let sv = s.value;
+            console.log(sv);
+        }
+
+        
+        
+        
+        
+        //計算是否為閏年
+        function leapYear() {
+            let year = document.getElementById("year").value;
+
+            if (year%4==0 && year%100!=0 || year%400==0 ) {
+                day_month[1] = 29;
+            }
+            else {
+                day_month[1] = 28;
+            }
+            for(let i = 1 ; i <=day_month[aaaa];i++) {
+                    console.log("dfdfdffd");
+                }
+        }
+
+        //計算每個月第一天星期幾
+        function firstDay(year, month) {
+            let d = new Date(year, month, 1);
+            console.log(d);
+        }
+
+        let day = new Date().getDay();
+        console.log(day);
+
+        //計算每個月有幾天
+        
+
+
+        let date = new Date(2023,2,6).getDay();
+        console.log(date);
+
+        
+    </script>
 </body>
 </html>
