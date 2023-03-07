@@ -58,20 +58,28 @@
         let day_month = [31,28,31,30,31,30,31,31,30,31,30,31];
         let day_momth_len = day_month.length;
         let s = document.querySelectorAll("select")[1];
+
+
+        
         
         
         //Month選單
-        for(let i = 1 ; i <= day_momth_len ; i++) {
-            s.innerHTML += `<option value="${i}">${i}</option>`;
-        }
-        console.log(s);
+        for(let i = 0 ; i < day_momth_len ; i++) {
+            s.innerHTML += `<option value="${i}">${i+1}</option>`;
 
+        }
+
+        //計算每個月有幾天
         function getMonth() {
-            let sv = s.value;
-            console.log(sv);
+            let mon = s.options[s.selectedIndex].value;
+            let num = day_month[mon];
+            console.log(num);
+            let d = 0;
+            for(let i = 1 ; i<=num; i++) {
+                d++; 
+            }
         }
 
-        
         
         
         
@@ -85,9 +93,9 @@
             else {
                 day_month[1] = 28;
             }
-            for(let i = 1 ; i <=day_month[aaaa];i++) {
-                    console.log("dfdfdffd");
-                }
+            // for(let i = 1 ; i <=day_month[];i++) {
+            //         console.log("dfdfdffd");
+            //     }
         }
 
         //計算每個月第一天星期幾
@@ -99,12 +107,7 @@
         let day = new Date().getDay();
         console.log(day);
 
-        //計算每個月有幾天
-        
 
-
-        let date = new Date(2023,2,6).getDay();
-        console.log(date);
 
         
     </script>
