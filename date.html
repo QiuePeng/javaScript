@@ -44,6 +44,7 @@
                     <li>SUN</li>
                 </ul>
             </div>
+            <div class="days" id="days"></div>
         </div>
         <div class="dateshow">
             <h2>Information</h2>
@@ -58,6 +59,7 @@
         let day_month = [31,28,31,30,31,30,31,31,30,31,30,31];
         let day_momth_len = day_month.length;
         let s = document.querySelectorAll("select")[1];
+        let days = document.getElementById("days");
 
 
         
@@ -66,7 +68,6 @@
         //Month選單
         for(let i = 0 ; i < day_momth_len ; i++) {
             s.innerHTML += `<option value="${i}">${i+1}</option>`;
-
         }
 
         //計算每個月有幾天
@@ -76,7 +77,9 @@
             console.log(num);
             let d = 0;
             for(let i = 1 ; i<=num; i++) {
-                d++; 
+                d++;
+                days.insertRow().innerHTML += `<p>${d}</p>`;
+
             }
         }
 

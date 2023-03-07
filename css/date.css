@@ -66,3 +66,9 @@ h2 {
     font-size: 20px;
     border: 1px solid #000;
 }
+
+.days {
+    width: 500px;
+    height: 100px;
+    background-color: #fff;
+}
