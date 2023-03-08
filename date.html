@@ -61,31 +61,12 @@
         let s = document.querySelectorAll("select")[1];
         let days = document.getElementById("days");
 
-
-        
-        
         
         //Month選單
         for(let i = 0 ; i < day_momth_len ; i++) {
             s.innerHTML += `<option value="${i}">${i+1}</option>`;
         }
 
-        //計算每個月有幾天
-        function getMonth() {
-            let mon = s.options[s.selectedIndex].value;
-            let num = day_month[mon];
-            console.log(num);
-            let d = 0;
-            for(let i = 1 ; i<=num; i++) {
-                d++;
-                days.insertRow().innerHTML += `<p>${d}</p>`;
-
-            }
-        }
-
-        
-        
-        
         //計算是否為閏年
         function leapYear() {
             let year = document.getElementById("year").value;
@@ -96,9 +77,23 @@
             else {
                 day_month[1] = 28;
             }
-            // for(let i = 1 ; i <=day_month[];i++) {
-            //         console.log("dfdfdffd");
-            //     }
+        }
+
+        //計算每個月有幾天
+        function getMonth() {
+            let mon = s.options[s.selectedIndex].value;
+            let num = day_month[mon];
+            let d = 0;
+            let date = new Date();
+            let getdate = date.getDay();
+            console.log(getdate);
+
+            days.innerHTML = " ";//清空字串
+            for(let i = 1 ; i<=num; i++) {//填入當月天數
+                d++;
+                // for(let j = 0 ; j < )
+                days.innerHTML += `<td>${d}</td>`;
+            }
         }
 
         //計算每個月第一天星期幾
